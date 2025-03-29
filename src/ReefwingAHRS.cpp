@@ -222,7 +222,7 @@ void ReefwingAHRS::reset() {
 }
 
 void ReefwingAHRS::update() {
-  long now = micros();
+  long now = _data.aTimeStamp;/*micros();*/ //allows for full time independence/feeding time data
   float deltaT = ((now - _lastUpdate)/1000000.0f); // Time elapsed since last update in seconds
 
   _lastUpdate = now;
